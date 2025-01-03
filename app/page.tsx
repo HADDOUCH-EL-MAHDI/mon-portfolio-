@@ -4,16 +4,30 @@ import dynamic from "next/dynamic";
 import { navItems } from "@/data";
 
 // Importation dynamique des composants
-const Hero = dynamic(() => import("@/components/Hero"));
+const Hero = dynamic(() => import("@/components/Hero"), {
+  ssr: false,
+});
 const FloatingNav = dynamic(
   () => import("@/components/ui/FloatingNavbar").then((mod) => mod.FloatingNav) // Correction de l'import
 );
-const Grid = dynamic(() => import("@/components/Grid"));
-const Footer = dynamic(() => import("@/components/Footer"));
-const Clients = dynamic(() => import("@/components/Clients"));
-const Approach = dynamic(() => import("@/components/Approach"));
-const Experience = dynamic(() => import("@/components/Experience"));
-const RecentProjects = dynamic(() => import("@/components/RecentProjects"));
+const Grid = dynamic(() => import("@/components/Grid"), {
+  ssr: false,
+});
+const Footer = dynamic(() => import("@/components/Footer"), {
+  ssr: false,
+});
+const Clients = dynamic(() => import("@/components/Clients"), {
+  ssr: false,
+});
+const Approach = dynamic(() => import("@/components/Approach"), {
+  ssr: false,
+});
+const Experience = dynamic(() => import("@/components/Experience"), {
+  ssr: false,
+});
+const RecentProjects = dynamic(() => import("@/components/RecentProjects"), {
+  ssr: false,
+});
 
 const Home = () => {
   return (
